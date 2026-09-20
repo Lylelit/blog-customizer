@@ -8,12 +8,13 @@ import {
 } from '@/constants/articleProps';
 import { clsx } from 'clsx';
 import { useEffect, useRef, useState } from 'react';
-import { ArrowButton } from 'src/ui/arrow-button';
-import { Button } from 'src/ui/button';
-import { RadioGroup } from 'src/ui/radio-group';
-import { Select } from 'src/ui/select';
-import { Separator } from 'src/ui/separator';
-import { Text } from 'src/ui/text';
+
+import { ArrowButton } from '../../ui/arrow-button';
+import { Button } from '../../ui/button';
+import { RadioGroup } from '../../ui/radio-group';
+import { Select } from '../../ui/select';
+import { Separator } from '../../ui/separator';
+import { Text } from '../../ui/text';
 
 import type { ArticleStateType, OptionType } from '@/constants/articleProps';
 import type { FormEvent } from 'react';
@@ -70,9 +71,7 @@ export const ArticleParamsForm = ({
   return (
     <div ref={containerRef}>
       <ArrowButton isOpen={isOpen} onClick={() => setIsOpen((current) => !current)} />
-      <aside
-        className={clsx(styles.container, { [styles.container_open]: isOpen })}
-      >
+      <aside className={clsx(styles.container, { [styles.container_open]: isOpen })}>
         <form className={styles.form} onSubmit={handleSubmit} onReset={handleReset}>
           <Text as="h2" size={31} weight={800} uppercase>
             Задайте параметры
